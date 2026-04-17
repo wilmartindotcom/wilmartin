@@ -1,0 +1,186 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts');
+const sorted = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout>
+  <main class="container">
+
+    <header class="profile">
+      <div class="avatar-wrap">
+        <img src="/images/wil-social.jpg" alt="Wil Martin" class="avatar" />
+      </div>
+      <h1 class="profile-name">Wil Martin</h1>
+      <p class="profile-bio">marketing brain. seo nerd. dad. bengals fan despite everything.</p>
+      <div class="socials">
+        <a href="https://twitter.com/heyitswil" target="_blank">𝕏</a>
+        <a href="https://linkedin.com/in/wilmartinseo" target="_blank">LinkedIn</a>
+        <a href="https://tiktok.com/@heyitswil" target="_blank">TikTok</a>
+        <a href="https://heyitswil.com" target="_blank">heyitswil.com</a>
+      </div>
+    </header>
+
+    <div class="accent-bar"></div>
+
+    <section class="feed">
+      {sorted.map((post) => (
+        <article class="feed-card">
+          <div class="feed-emoji">{post.data.emoji}</div>
+          <div class="feed-body">
+            <div class="feed-meta">
+              {post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+            </div>
+
+            {post.data.type === 'long' ? (
+              <div>
+                <h2 class="feed-title">
+                  <a href={`/posts/${post.id.replace(/\.md$/, '')}`}>{post.data.title}</a>
+                </h2>
+                <p class="feed-excerpt">{post.body.slice(0, 180).trim()}...</p>
+                <a href={`/posts/${post.id.replace(/\.md$/, '')}`} class="feed-more">Read more →</a>
+              </div>
+            ) : (
+              <div class="feed-short">{post.body}</div>
+            )}
+
+            {post.data.tags && (
+              <div class="tag-row">
+                {post.data.tags.map((tag) => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+            )}
+          </div>
+        </article>
+      ))}
+    </section>
+
+  </main>
+</BaseLayout>
+
+<style>
+  .profile {
+    text-align: center;
+    padding: 3rem 0 2rem;
+  }
+  .avatar-wrap {
+    margin: 0 auto 1rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--border);
+  }
+  .avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .profile-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    margin-bottom: 0.4rem;
+  }
+  .profile-bio {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+  .socials {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .socials a {
+    font-size: 13px;
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+  .socials a:hover {
+    color: var(--accent-violet);
+  }
+  .accent-bar {
+    height: 2px;
+    width: 48px;
+    border-radius: 2px;
+    background: var(--accent-gradient);
+    margin: 0 auto 2.5rem;
+  }
+  .feed {
+    padding-bottom: 4rem;
+  }
+  .feed-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .feed-emoji {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .feed-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .feed-meta {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  .feed-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+  .feed-title a {
+    color: var(--text-primary);
+  }
+  .feed-title a:hover {
+    color: var(--accent-violet);
+  }
+  .feed-excerpt {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .feed-more {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--accent-violet);
+    margin-top: 6px;
+  }
+  .feed-more:hover {
+    color: var(--accent-pink);
+  }
+  .feed-short {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .tag-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .tag {
+    font-size: 11px;
+    background: #1e0e33;
+    color: var(--accent-violet);
+    border-radius: 99px;
+    padding: 2px 10px;
+  }
+</style>
