@@ -47,6 +47,10 @@ img {
   display: block;
 }
 
+.feed-short img {
+  margin-top: 0.75rem;
+}
+
 .container {
   max-width: 680px;
   margin: 0 auto;
