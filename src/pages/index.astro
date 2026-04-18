@@ -1,9 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 const posts = await getCollection('posts');
 const sorted = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const renderedPosts = await Promise.all(
+  sorted.map(async (post) => {
+    const { Content } = await render(post);
+    return { post, Content };
+  })
+);
 ---
 
 <BaseLayout>
@@ -14,19 +21,20 @@ const sorted = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf(
         <img src="/images/wil-social.jpg" alt="Wil Martin" class="avatar" />
       </div>
       <h1 class="profile-name">Wil Martin</h1>
-      <p class="profile-bio">marketing brain. seo nerd. dad. bengals fan despite everything.</p>
+      <p class="profile-bio">Just posting stuff I like and what I'm thinking about. Bangarang.</p>
       <div class="socials">
-        <a href="https://twitter.com/heyitswil" target="_blank">𝕏</a>
-        <a href="https://linkedin.com/in/wilmartinseo" target="_blank">LinkedIn</a>
-        <a href="https://tiktok.com/@heyitswil" target="_blank">TikTok</a>
-        <a href="https://heyitswil.com" target="_blank">heyitswil.com</a>
-      </div>
+        <a href="https://www.facebook.com/wilmartin" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/wil_etc/" target="_blank">Instagram</a>
+        <a href="https://www.threads.com/@wil_etc" target="_blank">Threads</a>
+        <a href="https://www.tiktok.com/@wilmartin.com" target="_blank">TikTok</a>
+        <a href="https://heyitswil.com" target="_blank">SEO Blog ↗</a>
+</div>
     </header>
 
     <div class="accent-bar"></div>
 
     <section class="feed">
-      {sorted.map((post) => (
+      {renderedPosts.map(({ post, Content }) => (
         <article class="feed-card">
           <div class="feed-emoji">{post.data.emoji}</div>
           <div class="feed-body">
@@ -43,7 +51,7 @@ const sorted = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf(
                 <a href={`/posts/${post.id.replace(/\.md$/, '')}`} class="feed-more">Read more →</a>
               </div>
             ) : (
-              <div class="feed-short">{post.body}</div>
+              <div class="feed-short"><Content /></div>
             )}
 
             {post.data.tags && (
