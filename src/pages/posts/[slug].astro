@@ -95,25 +95,29 @@ const { Content } = await render(post);
     color: var(--text-secondary);
     line-height: 1.8;
   }
-  .post-body p {
+  .post-body :global(p) {
     margin-bottom: 1.25rem;
   }
-  .post-body h2 {
+  .post-body :global(h2) {
     font-size: 20px;
     font-weight: 600;
     color: var(--text-primary);
     margin: 2rem 0 0.75rem;
   }
-  .post-body h3 {
+  .post-body :global(h3) {
     font-size: 17px;
     font-weight: 500;
     color: var(--text-primary);
     margin: 1.5rem 0 0.5rem;
   }
-  .post-body a {
+  .post-body :global(a) {
     color: var(--accent-violet);
   }
-  .post-body a:hover {
+  .post-body :global(a:hover) {
     color: var(--accent-pink);
+  }
+  .post-body :global(strong) {
+    color: var(--text-primary);
+    font-weight: 600;
   }
 </style>
