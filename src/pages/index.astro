@@ -8,7 +8,9 @@ const sorted = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf(
 const renderedPosts = await Promise.all(
   sorted.map(async (post) => {
     const { Content } = await render(post);
-    return { post, Content };
+    const cleanBody = post.body.replace(/!\[.*?\]\(.*?\)/g, '').trim();
+    const excerpt = cleanBody.slice(0, 180).trim();
+    return { post, Content, excerpt };
   })
 );
 ---
@@ -34,7 +36,7 @@ const renderedPosts = await Promise.all(
     <div class="accent-bar"></div>
 
     <section class="feed">
-      {renderedPosts.map(({ post, Content }) => (
+      {renderedPosts.map(({ post, Content, excerpt }) => (
         <article class="feed-card">
           <div class="feed-emoji">{post.data.emoji}</div>
           <div class="feed-body">
@@ -50,7 +52,7 @@ const renderedPosts = await Promise.all(
                 <h2 class="feed-title">
                   <a href={`/posts/${post.id.replace(/\.md$/, '')}`}>{post.data.title}</a>
                 </h2>
-                <p class="feed-excerpt">{post.body.slice(0, 180).trim()}...</p>
+                <p class="feed-excerpt">{excerpt}...</p>
                 <a href={`/posts/${post.id.replace(/\.md$/, '')}`} class="feed-more">Read more →</a>
               </div>
             ) : (
@@ -159,10 +161,11 @@ const renderedPosts = await Promise.all(
     object-fit: cover;
   }
   .feed-title {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 4px;
-    line-height: 1.4;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
   }
   .feed-title a {
     color: var(--text-primary);
