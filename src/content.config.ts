@@ -9,7 +9,9 @@ const posts = defineCollection({
     emoji: z.string().default('💬'),
     type: z.enum(['short', 'long']).default('short'),
     tags: z.array(z.string()).optional(),
+    image: z.string().optional(),
   }),
 });
 
+export const collections = { posts };
 export const collections = { posts };
