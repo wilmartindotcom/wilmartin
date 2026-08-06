@@ -21,7 +21,7 @@ Watching it was a crash course in rewiring my brain. The pacing is slow. There's
 
 🔗👉 [**If you want to read my full movie review, check it out here.**](/posts/they-live-review)
 
-I know how that sounds. Old man yells at clouds. But that's genuinely where I'm at.
+I know how that sounds. Old man yells at cloud. But that's genuinely where I'm at.
 
 ![old man yells at cloud](https://media1.tenor.com/m/p66IVrPG8msAAAAd/tv-simpsons.gif)
 
