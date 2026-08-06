@@ -5,7 +5,7 @@ emoji: "🎬"
 type: long
 tags: ["movies", "john-carpenter", "halloween"]
 ---
-![john carpenter](/public/images/john-carpenter-1.jpg)
+![john carpenter](/images/john-carpenter-1.jpg)
  
 I've never been a movie guy. TV shows, sure. Creative, artsy stuff, sure. But movies, especially the genre and cult stuff most people my age grew up obsessing over, somehow passed me by. I saw the normal 80s and 90s stuff everyone saw. The Sandlot, Goonies, Rookie of the Year, 3 Ninjas, Sidekicks, Karate Kid. Loved all of it. But when I hit my teens I never went deeper into sci fi or horror the way a lot of people did. I haven't seen a single Star Wars movie. That's a real fact about me and I bring it up at parties because it always gets a reaction.
 
