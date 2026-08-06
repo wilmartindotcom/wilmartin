@@ -19,7 +19,7 @@ I was watching a political podcast on YouTube and they brought it up, talking ab
 ## Rewiring my brain for good movies
 Watching it was a crash course in rewiring my brain. The pacing is slow. There's a long opening credits sequence with Carpenter's own score just sitting there. Big gaps in the story, characters with almost no backstory explained to you. Things get drawn out way longer than I'm used to, like that fight between Nada and Frank that people still argue about online. But it's drawn out on purpose. It's building something. It felt like a breath of fresh air and an emotional rollercoaster at the same time, which is not something I get from most movies now. Everything today feels cookie cutter, over engineered, over explained, like it's terrified you might have to think for yourself for a second.
 
-[**If you want to read my full movie review, check it out here.**](/posts/they-live-review)
+🔗👉 [**If you want to read my full movie review, check it out here.**](/posts/they-live-review)
 
 I know how that sounds. Old man yells at clouds. But that's genuinely where I'm at.
 
