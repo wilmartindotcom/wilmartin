@@ -44,6 +44,9 @@ const renderedPosts = await Promise.all(
 
             {post.data.type === 'long' ? (
               <div>
+                {post.data.image && (
+                  <img src={post.data.image} alt={post.data.title} class="feed-image" />
+                )}
                 <h2 class="feed-title">
                   <a href={`/posts/${post.id.replace(/\.md$/, '')}`}>{post.data.title}</a>
                 </h2>
@@ -146,6 +149,14 @@ const renderedPosts = await Promise.all(
     font-size: 11px;
     color: var(--text-muted);
     margin-bottom: 4px;
+  }
+  .feed-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: block;
+    max-height: 320px;
+    object-fit: cover;
   }
   .feed-title {
     font-size: 16px;
