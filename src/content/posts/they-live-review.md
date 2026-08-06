@@ -6,7 +6,7 @@ type: long
 tags:
   - movies
   - john-carpenter
-image: "/images/they-live-1.jpg"
+image: "/images/they-live-cover.jpg"
 ---
 ![they live 1](/images/they-live-1.jpg)
 
