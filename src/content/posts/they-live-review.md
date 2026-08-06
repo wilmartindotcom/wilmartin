@@ -10,7 +10,7 @@ image: "/images/they-live-cover.jpg"
 ---
 ![they live 1](/images/they-live-1.jpg)
 
-I'm starting my genre movie education late in life, but starting with They Live was a choice I don't think I'll regret. As a lifelong wrestling fan, casting Roddy Piper as the lead helped me connect from the get-go. It's a stark anti-capitalist, anti-establishment movie, and it hit me a little differently knowing it was made decades ago. I still feel the daily tug of "OBEY" and "CONSUME" every time I see an Instagram ad on my phone.
+I'm starting [my genre movie education](/posts/movie-guy.html) late in life, but starting with They Live was a choice I don't think I'll regret. As a lifelong wrestling fan, casting Roddy Piper as the lead helped me connect from the get-go. It's a stark anti-capitalist, anti-establishment movie, and it hit me a little differently knowing it was made decades ago. I still feel the daily tug of "OBEY" and "CONSUME" every time I see an Instagram ad on my phone.
 
 The alley fight could be its own mini-movie. Or a Wrestlemania main event. All Nada wants is for Frank to put the glasses on and look, and Frank fights him on it like it's the biggest ask in the world. I was frustrated right along with Nada. Half of me wanted the fight to end and half of me wanted it to keep going, because that frustration was building into something, and I could feel it. Movies today build tension but they don't let it sit long enough to actually annoy you. This one did, on purpose, and by the time Frank finally looks, the payoff hits so much harder because of it.
 
