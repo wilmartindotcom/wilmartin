@@ -11,7 +11,6 @@ That started to change last month with They Live.
 
 I was watching a political podcast on YouTube and they brought it up, talking about the anti capitalist, anti establishment themes running through it. It's basically a cult classic for people who think like that. And I realized I hadn't seen it. Felt wrong honestly. Then I found out it was John Carpenter and something clicked. Wait, what else has this guy made that I've never seen? I knew he was more than just Halloween, but I'd never actually looked past that. Rabbit hole opened up immediately.
 
-
 ![john carpenter](public/images/john-carpenter-1.jpeg)
 
 ## Rewiring my brain for good movies
