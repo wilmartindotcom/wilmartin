@@ -7,7 +7,7 @@ tags:
   - movies
   - john-carpenter
 ---
-![they live 1](public/images/they-live-1.jpg)
+![they live 1](/images/they-live-1.jpg)
 
 I'm starting my genre movie education late in life, but starting with They Live was a choice I don't think I'll regret. As a lifelong wrestling fan, casting Roddy Piper as the lead helped me connect from the get-go. It's a stark anti-capitalist, anti-establishment movie, and it hit me a little differently knowing it was made decades ago. I still feel the daily tug of "OBEY" and "CONSUME" every time I see an Instagram ad on my phone.
 
@@ -15,7 +15,7 @@ The alley fight could be its own mini-movie. Or a Wrestlemania main event. All N
 
 I went in a little thrown by how little we're given in terms of backstory. I'm used to modern movies explaining everything and leaving nothing to interpretation. I came out realizing that was the point. My own imagination was able to play a part in the story rather than having every detail spoon fed to me. The gaps are part of what makes it work.
 
-![john carpenter](public/images/they-live-2.jpg)
+![john carpenter](/images/they-live-2.jpg)
 
 While Carpenter leaves elements of the backstory and characters to the imagination, he was crystal clear about the social commentary. I get how some might think "CONSUME" and "OBEY" was a little too on-the-nose, but honestly, being any less blunt would have softened the message too much. I think Carpenter realizes the stakes are too high to not attack the problem head-on. So, yeah, you can laugh at how on-the-nose it was, but you can't argue about the point he was trying to make.
 
