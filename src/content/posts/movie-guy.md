@@ -3,7 +3,7 @@ date: 2026-08-01
 title: "Am I Becoming a Movie Guy Now?"
 emoji: "🎬"
 type: long
-tags: ["movies", "john-carpenter", "halloween"]
+tags: ["movies", "john carpenter", "halloween"]
 image: "/images/john-carpenter-1.jpg"
 ---
 ![john carpenter](/images/john-carpenter-1.jpg)
