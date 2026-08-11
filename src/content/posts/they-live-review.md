@@ -5,7 +5,7 @@ emoji: 🕶️
 type: long
 tags:
   - movies
-  - john-carpenter
+  - john carpenter
 image: "/images/they-live-cover.jpg"
 ---
 ![they live 1](/images/they-live-1.jpg)
