@@ -1,6 +1,6 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -20,6 +20,15 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
+
+const renderedPosts = await Promise.all(
+  posts.map(async (post) => {
+    const { Content } = await render(post);
+    const cleanBody = post.body.replace(/!\[.*?\]\(.*?\)/g, '').trim();
+    const excerpt = cleanBody.slice(0, 180).trim();
+    return { post, Content, excerpt };
+  })
+);
 ---
 
 <BaseLayout title={`Posts tagged "${tag}"`}>
@@ -27,20 +36,44 @@ const { posts } = Astro.props;
     <nav class="back">
       <a href="/">← Back</a>
     </nav>
+
     <h1 class="tag-heading">Posts tagged "{tag}"</h1>
-    <div class="feed">
-      {posts.map((post) => (
-        <a href={`/posts/${post.id.replace(/\.md$/, '')}`} class="feed-item">
-          <span class="feed-emoji">{post.data.emoji}</span>
-          <div class="feed-meta">
-            {post.data.title && <h2 class="feed-title">{post.data.title}</h2>}
-            <span class="feed-date">
-              {post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-            </span>
+
+    <section class="feed">
+      {renderedPosts.map(({ post, Content, excerpt }) => (
+        <article class="feed-card">
+          <div class="feed-emoji">{post.data.emoji}</div>
+          <div class="feed-body">
+            <div class="feed-meta">
+              {post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+            </div>
+
+            {post.data.type === 'long' ? (
+              <div>
+                {post.data.image && (
+                  <img src={post.data.image} alt={post.data.title} class="feed-image" />
+                )}
+                <h2 class="feed-title">
+                  <a href={`/posts/${post.id.replace(/\.md$/, '')}`}>{post.data.title}</a>
+                </h2>
+                <p class="feed-excerpt">{excerpt}...</p>
+                <a href={`/posts/${post.id.replace(/\.md$/, '')}`} class="feed-more">Read more →</a>
+              </div>
+            ) : (
+              <div class="feed-short"><Content /></div>
+            )}
+
+            {post.data.tags && (
+              <div class="tag-row">
+                {post.data.tags.map((t) => (
+                  <a href={`/tags/${encodeURIComponent(t)}`} class="tag">{t}</a>
+                ))}
+              </div>
+            )}
           </div>
-        </a>
+        </article>
       ))}
-    </div>
+    </section>
   </main>
 </BaseLayout>
 
@@ -56,44 +89,94 @@ const { posts } = Astro.props;
     color: var(--accent-violet);
   }
   .tag-heading {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
     letter-spacing: -0.03em;
     color: var(--text-primary);
     margin: 1.5rem 0 2rem;
   }
   .feed {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    padding-bottom: 4rem;
   }
-  .feed-item {
+  .feed-card {
     display: flex;
+    gap: 1rem;
     align-items: flex-start;
-    gap: 0.75rem;
-    padding: 1.25rem 0;
-    border-bottom: 0.5px solid var(--border);
-    text-decoration: none;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
   }
   .feed-emoji {
-    font-size: 20px;
-    line-height: 1.4;
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .feed-body {
+    flex: 1;
+    min-width: 0;
   }
   .feed-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  .feed-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: block;
+    max-height: 320px;
+    object-fit: cover;
   }
   .feed-title {
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  .feed-title a {
     color: var(--text-primary);
   }
-  .feed-item:hover .feed-title {
+  .feed-title a:hover {
     color: var(--accent-violet);
   }
-  .feed-date {
+  .feed-excerpt {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .feed-more {
+    display: inline-block;
     font-size: 12px;
-    color: var(--text-muted);
+    color: var(--accent-violet);
+    margin-top: 6px;
+  }
+  .feed-more:hover {
+    color: var(--accent-pink);
+  }
+  .feed-short {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .tag-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .tag {
+    font-size: 11px;
+    background: #1e0e33;
+    color: var(--accent-violet);
+    border-radius: 99px;
+    padding: 2px 10px;
+    text-decoration: none;
+  }
+  .tag:hover {
+    color: var(--accent-pink);
   }
 </style>
