@@ -29,7 +29,7 @@ const { Content } = await render(post);
         {post.data.tags && (
           <div class="tag-row">
             {post.data.tags.map((tag) => (
-              <span class="tag">{tag}</span>
+              <a href={`/tags/${encodeURIComponent(tag)}`} class="tag">{tag}</a>
             ))}
           </div>
         )}
@@ -89,6 +89,10 @@ const { Content } = await render(post);
     color: var(--accent-violet);
     border-radius: 99px;
     padding: 2px 10px;
+    text-decoration: none;
+  }
+  .tag:hover {
+    color: var(--accent-pink);
   }
   .post-body {
     font-size: 16px;
