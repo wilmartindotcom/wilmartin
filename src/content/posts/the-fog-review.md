@@ -3,7 +3,7 @@ date: 2026-08-11
 title: "Movie Review: The Fog (1980)"
 emoji: "🌫️"
 type: long
-tags: ["john carpenter", "horror"]
+tags: ["movies", "horror", "john carpenter"]
 image: "/images/the-fog-1.jpg"
 ---
 ![the fog title screen](/images/the-fog-title.jpg)
