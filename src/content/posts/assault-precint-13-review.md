@@ -5,7 +5,7 @@ emoji: 🏢
 type: long
 tags:
   - movies
-  - john-carpenter
+  - john carpenter
 image: "/images/ap13-1.jpg"
 ---
 ![assault on precinct 13 1](/images/ap13-1.jpg)
