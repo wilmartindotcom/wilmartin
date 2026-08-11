@@ -2,6 +2,7 @@
 date: 2025-11-01
 emoji: "💭"
 type: short
+tags: ["thoughts"]
 ---
 I believe that you find what you're looking for.  
 If you're looking for problems, you'll find some.  
