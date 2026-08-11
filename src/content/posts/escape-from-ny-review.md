@@ -5,7 +5,7 @@ emoji: 🗽
 type: long
 tags:
   - movies
-  - john-carpenter
+  - john carpenter
 image: "/images/escape-ny-1.jpg"
 ---
 ![escape from new york 1](/images/escape-ny-1.jpg)
