@@ -4,6 +4,7 @@ emoji: 🤼
 type: short
 tags:
   - wwe
+  - wrestling
 ---
 Happy WrestleMania Saturday to all who celebrate. 🎉 🙌  
 
