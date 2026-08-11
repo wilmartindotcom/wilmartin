@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = await getCollection('posts');
+const tagCounts = posts.reduce((acc, post) => {
+  (post.data.tags ?? []).forEach((tag) => {
+    acc[tag] = (acc[tag] ?? 0) + 1;
+  });
+  return acc;
+}, {});
+
+const sortedTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]);
+---
+
+<BaseLayout title="Tags">
+  <h1>Browse by tag</h1>
+  <ul class="tag-list">
+    {sortedTags.map(([tag, count]) => (
+      <li>
+        <a href={`/tags/${tag}`}>{tag}</a>
+        <span class="tag-count">{count}</span>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
