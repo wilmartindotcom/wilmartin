@@ -3,8 +3,8 @@ date: 2026-08-16
 title: "Movie Review: The Thing (1982)"
 emoji: "🧊"
 type: long
-tags: ["movies" "john carpenter"]
-image: ["/images/the-thing-2.jpg"]
+tags: ["movies","horro","john carpenter"]
+image: "/images/the-thing-2.jpg"
 ---
 
 !(the thing title slide)[/images/the-thing-1.jpg]
