@@ -4,7 +4,7 @@ title: "Movie Review: Prince of Darkness (1987)"
 emoji: "🪞"
 type: long
 image: "/images/prince-darkness-1.jpg"
-tags: ["movie review", "john carpenter", "horror"]
+tags: ["movies", "john carpenter", "horror"]
 ---
 
 I love how slowly this movie builds. It gives you almost no answers for a long stretch, but you can tell something is going on, and the tension really never lets up even after the ending.
