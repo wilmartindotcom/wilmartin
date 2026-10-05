@@ -12,6 +12,8 @@ The movie and plot itself was surprisingly deep. What got me most was how many l
 
 As Carpenter is prone to do, the chaos starts out of nowhere. Jack is giving a guy a ride to the airport, and a few minutes later a gang is kidnapping the guy's girlfriend and they're in the middle of a massive conflict.
 
+![big trouble in little china cast](/images/big-trouble-2.jpg)
+
 Kurt Russell is perfect as the fearless, super cool hero (at least in his own mind). He's a lucky moron who somehow keeps succeeding at saving the day. Fav part: when he accidentally fires his gun in the air and the rocks knock him out right before the big fight, I lost it.
 
 Carpenter also has zero shame with the cheesiness of the names. The lawyer is named Gracie Law. An old Asian man named Egg Shen (3 Ninjas shoutout!).
