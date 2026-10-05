@@ -4,6 +4,7 @@ title: "Movie Review: Big Trouble in Little China (1986)"
 emoji: "🐉"
 type: long
 tags: ["movies", "john carpenter"]
+image: "/images/big-trouble-1.jpg"
 ---
 
 I can't believe I went so long without watching this gem. The whole vibe took me right back to my martial arts obsessed childhood in the 90s.
